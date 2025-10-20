@@ -31,6 +31,7 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "clangd",
+                "copilot"
             },
             handlers = {
                 function(server_name) -- default handler
@@ -86,5 +87,7 @@ return {
                 prefix = "",
             }
         })
+
+    vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Formatted buffer" })
     end
 }
