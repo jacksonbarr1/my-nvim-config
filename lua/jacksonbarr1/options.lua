@@ -36,3 +36,6 @@ o.scrolloff = 8
 o.signcolumn = "yes"
 
 o.updatetime = 50
+
+o.exrc = true
+o.secure = true
