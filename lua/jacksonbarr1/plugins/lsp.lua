@@ -13,9 +13,9 @@ return {
     },
 
     config = function()
-        require("conform").setup({
-            formatters_by_ft = {}
-        })
+        -- require("conform").setup({
+        --     formatters_by_ft = {}
+        -- })
 
         local cmp = require("cmp")
         local cmp_lsp = require("cmp_nvim_lsp")
@@ -31,7 +31,8 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "clangd",
-                "copilot"
+                "copilot",
+                "eslint"
             },
             handlers = {
                 function(server_name) -- default handler
@@ -78,6 +79,18 @@ return {
 
         vim.diagnostic.config({
             -- update_in_insert = true
+            virtual_text = {
+                severity = nil,
+                source = "if_many",
+                format = function(diagnostic)
+                    if diagnostic.code then
+                        return string.format("%s", diagnostic.message)
+                    end
+                    return diagnostic.message
+                end,
+                prefix = "■",
+                spacing = 4,
+            },
             float = {
                 focusable = false,
                 style = "minimal",
@@ -88,6 +101,5 @@ return {
             }
         })
 
-    vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Formatted buffer" })
     end
 }
