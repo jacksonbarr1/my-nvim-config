@@ -11,7 +11,7 @@ map("n", "<leader>fD",
   function()
     local is_enabled = vim.diagnostic.is_enabled()
     vim.diagnostic.enable(not is_enabled)
-    vim.notify(is enabled and "Diagnostics Disabled" or "Diagnostics Enabled", vim.log.levels.INFO)
+    vim.notify(is_enabled and "Diagnostics Disabled" or "Diagnostics Enabled", vim.log.levels.INFO)
   end,
   { desc = "Toggle Diagnostics", silent = true }
 )
