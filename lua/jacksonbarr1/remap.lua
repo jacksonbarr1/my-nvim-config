@@ -13,5 +13,5 @@ map("n", "<leader>fD",
     vim.diagnostic.enable(not is_enabled)
     vim.notify(is enabled and "Diagnostics Disabled" or "Diagnostics Enabled", vim.log.levels.INFO)
   end,
-  { desc = "Toggle Diagnostics", silent = true },
+  { desc = "Toggle Diagnostics", silent = true }
 )
