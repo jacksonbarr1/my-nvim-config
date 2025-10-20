@@ -7,6 +7,8 @@ map("n", "<down>", '<cmd>echo "Use j to move down"<CR>')
 
 map("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "Open Lazy UI" })
 
+map("n", "<leader>lf", vim.lsp.buf.format, { desc = "Formatted buffer" })
+
 map("n", "<leader>fD",
   function()
     local is_enabled = vim.diagnostic.is_enabled()
