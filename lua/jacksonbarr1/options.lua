@@ -6,6 +6,9 @@ g.maplocalleader = " "
 
 g.have_nerd_font = true
 
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
 o.number = true
 o.relativenumber = true
 
